@@ -1,0 +1,114 @@
+.shell { background: var(--hero); padding: 0 9px 9px; }
+.panel {
+  display: grid;
+  min-height: 820px;
+  grid-template-columns: minmax(280px, .86fr) minmax(470px, 1.42fr);
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(54px, 8vw, 140px);
+  row-gap: 58px;
+  border-radius: 24px;
+  background: #f4f4f4;
+  color: #272727;
+  padding: clamp(64px, 7vw, 104px) clamp(28px, 5vw, 76px);
+}
+.intro { align-self: start; }
+.eyebrow {
+  min-height: 32px;
+  margin-bottom: 28px;
+  border: 1px solid #e4e4e4;
+  border-radius: 7px;
+  background: #fff;
+  color: #df3712;
+  box-shadow: 0 5px 12px rgba(0,0,0,.07);
+  font-size: 11px;
+  font-weight: 750;
+}
+.intro h2 {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.3rem, 5.3vw, 6.1rem);
+  font-weight: 500;
+  line-height: .92;
+  letter-spacing: -.068em;
+  text-transform: capitalize;
+}
+.intro > p { max-width: 480px; margin: 42px 0 0; color: #4f4f4f; font-size: clamp(.82rem, 1vw, .96rem); line-height: 1.55; }
+
+.accordionWrap { grid-column: 2; grid-row: 1 / span 2; }
+.accordion { display: flex; flex-direction: column; gap: 14px; }
+.accordionItem {
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.96);
+  border-radius: 27px;
+  background: #f8f8f8;
+  color: #666;
+  box-shadow: 0 7px 0 #dedede, 0 16px 30px rgba(0,0,0,.055);
+  transition: background-color 240ms ease-out, color 240ms ease-out, box-shadow 240ms ease-out, transform 140ms ease-out;
+}
+.accordionItem:hover { transform: translateY(-1px); color: #292929; }
+.activeItem {
+  background: radial-gradient(circle at 88% 7%, #303236, #1b1c1f 48%, #17181a 100%);
+  color: #fff;
+  box-shadow: 0 8px 0 #b9b9b9, 0 24px 44px rgba(0,0,0,.16);
+}
+.trigger {
+  display: grid;
+  min-height: 82px;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 0 clamp(22px, 3vw, 36px);
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.35rem, 2vw, 2.2rem);
+  font-weight: 520;
+  letter-spacing: -.035em;
+  text-align: left;
+}
+.activeItem .trigger { min-height: 98px; align-items: start; padding-top: 28px; }
+.number { align-self: center; color: #b4b4b4; font-family: var(--font-body), sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0; }
+.activeItem .number { align-self: start; color: #777a80; }
+.indicator { display: none; }
+.body { padding: 0 clamp(22px, 3vw, 36px) 30px; }
+.body p { max-width: 690px; margin: 0; color: #aeb0b4; font-size: clamp(.75rem, .88vw, .9rem); line-height: 1.55; }
+.capabilities { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.capability { min-height: 29px; border: 1px solid rgba(255,255,255,.1); border-radius: 999px; background: #393b40; color: #d6d7d9; font-size: 10px; }
+
+.imageCard {
+  position: relative;
+  align-self: end;
+  min-height: 240px;
+  overflow: hidden;
+  margin: 0;
+  border-radius: 24px;
+  background-image: url("/collaboration.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+.imageShade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.78)); }
+.imageCard figcaption { position: absolute; left: 20px; right: 20px; bottom: 18px; color: rgba(255,255,255,.85); font-size: 11px; line-height: 1.4; }
+
+@media (max-width: 930px) {
+  .panel { grid-template-columns: 1fr; grid-template-rows: auto; row-gap: 42px; }
+  .accordionWrap { grid-column: 1; grid-row: auto; }
+  .imageCard { min-height: 320px; }
+}
+@media (max-width: 620px) {
+  .shell { padding: 0; }
+  .panel { min-height: auto; border-radius: 0; padding: 72px 18px; }
+  .intro h2 { font-size: clamp(3.2rem, 14vw, 5rem); }
+  .intro > p { margin-top: 28px; }
+  .accordion { gap: 11px; }
+  .accordionItem { border-radius: 22px; }
+  .trigger { min-height: 74px; padding-inline: 20px; font-size: 1.35rem; }
+  .activeItem .trigger { min-height: 88px; padding-top: 24px; }
+  .indicator { display: inline-flex; color: #8b8b8b; }
+  .number { display: none; }
+  .body { padding: 0 20px 25px; }
+  .capabilities { margin-top: 22px; }
+  .imageCard { min-height: 240px; order: 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordionItem { transition: none; }
+}

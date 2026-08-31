@@ -1,0 +1,172 @@
+.shell {
+  --section-ink: #232323;
+  position: relative;
+  z-index: 4;
+  margin-top: 10px;
+  background: transparent;
+  padding: 0 9px 9px;
+}
+
+.panel {
+  position: relative;
+  min-height: 960px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 34px 34px 24px 24px;
+  background: #efefef;
+  box-shadow: 0 -10px 28px rgba(126,27,6,.08);
+  color: var(--section-ink);
+  padding: clamp(68px, 8vw, 118px) clamp(28px, 5vw, 78px) 38px;
+}
+
+.headingBlock { position: relative; z-index: 2; }
+.eyebrow {
+  min-height: 32px;
+  margin-bottom: 28px;
+  border: 1px solid #dedede;
+  border-radius: 7px;
+  background: #fff;
+  color: #db3511;
+  box-shadow: 0 5px 12px rgba(0,0,0,.08);
+  font-size: 11px;
+  font-weight: 750;
+}
+.headingBlock h2 {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.1rem, 5.2vw, 6.2rem);
+  font-weight: 500;
+  line-height: .92;
+  letter-spacing: -.065em;
+}
+.headingBlock h2 span { display: block; color: #b9b9b9; }
+
+.cardsGrid {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(320px, 1fr);
+  gap: 22px;
+  margin-top: -6px;
+}
+.locationWrap { min-width: 0; }
+.locationCard {
+  position: relative;
+  min-height: 530px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 32px;
+  background-image: url("/jakarta-skyline.jpg");
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 8px 0 #c7c7c7, 0 28px 55px rgba(0,0,0,.18);
+  padding: 0;
+}
+.locationShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8,16,20,.32), rgba(5,14,17,.82)), radial-gradient(circle at 50% 42%, transparent, rgba(0,0,0,.3));
+}
+.locationContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 530px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+}
+.availabilityChip {
+  margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 999px;
+  background: rgba(20,20,20,.52);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+}
+.availabilityChip svg { color: #ff4a21; filter: drop-shadow(0 0 6px #ff4a21); }
+.locationContent p { margin: 0; font-size: clamp(1.8rem, 3vw, 3.2rem); font-weight: 700; line-height: 1; }
+.locationContent h3 { margin: 4px 0 30px; color: #ff4a21; font-size: clamp(1.8rem, 3vw, 3.2rem); font-weight: 500; line-height: 1; letter-spacing: -.045em; }
+.projectButton {
+  min-height: 54px;
+  padding: 0 24px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sideCards { display: grid; grid-template-rows: 1fr 1fr; gap: 22px; }
+.statCard, .quoteCard {
+  border: 1px solid rgba(255,255,255,.92);
+  border-radius: 32px;
+  background: #f9f9f9;
+  box-shadow: 0 8px 0 #d7d7d7, 0 22px 38px rgba(0,0,0,.08);
+}
+.statCard { min-height: 252px; padding: clamp(22px, 3vw, 38px); }
+.statCopy { max-width: 390px; color: #282828; font-size: clamp(.82rem, 1.08vw, 1rem); line-height: 1.45; }
+.statFooter { margin-top: auto; align-items: end; justify-content: space-between; padding: 0; }
+.stars { padding: 2px 4px; background: #454545; color: #fff; font-size: 12px; letter-spacing: 2px; }
+.statFooter strong { color: #e5e5e5; font-family: var(--font-display), sans-serif; font-size: clamp(5rem, 8vw, 8.5rem); font-weight: 500; line-height: .66; letter-spacing: -.08em; }
+.statFooter strong span { font-size: .52em; }
+.quoteCard { min-height: 252px; padding: clamp(20px, 2.7vw, 34px); }
+.quoteContent { display: grid; height: 100%; grid-template-columns: 120px 1fr; align-items: center; gap: 28px; padding: 0; }
+.avatar {
+  display: grid;
+  width: 120px;
+  aspect-ratio: .82;
+  place-items: center;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #222 0 42%, #ef3b12 42% 65%, #f0a575 65%);
+  color: rgba(255,255,255,.9);
+  box-shadow: 0 12px 24px rgba(0,0,0,.2);
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.quoteContent blockquote { margin: 0; font-size: clamp(.75rem, .95vw, .9rem); line-height: 1.45; }
+.quoteContent blockquote > span { display: block; height: 21px; color: #dedede; font-family: Georgia, serif; font-size: 3.5rem; line-height: .65; }
+.quoteContent footer { margin-top: 23px; font-size: 10px; font-weight: 800; }
+.quoteContent footer small { margin-left: 8px; padding-left: 8px; border-left: 1px solid #bbb; font-size: 9px; font-weight: 500; }
+
+.trustStrip {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: center;
+  gap: 38px;
+  margin-top: 94px;
+  padding-top: 34px;
+  border-top: 1px solid #ddd;
+  color: #858585;
+}
+.trustStrip p { margin: 0; font-size: 11px; line-height: 1.45; }
+.marks { display: flex; align-items: center; justify-content: space-around; gap: 26px; }
+.marks span { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display), sans-serif; font-size: clamp(.9rem, 1.25vw, 1.2rem); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .panel { min-height: auto; }
+  .cardsGrid { grid-template-columns: 1fr; margin-top: 28px; }
+  .sideCards { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .trustStrip { margin-top: 72px; }
+}
+
+@media (max-width: 680px) {
+  .shell { margin-top: 6px; padding: 0; }
+  .panel { border-inline: 0; border-radius: 26px 26px 0 0; padding: 72px 18px 42px; }
+  .headingBlock h2 { font-size: clamp(3.1rem, 14vw, 5rem); }
+  .headingBlock h2 span { margin-top: 4px; }
+  .locationCard, .locationContent { min-height: 470px; }
+  .locationCard { border-radius: 24px; }
+  .sideCards { grid-template-columns: 1fr; }
+  .statCard, .quoteCard { border-radius: 24px; }
+  .quoteContent { grid-template-columns: 92px 1fr; gap: 18px; }
+  .avatar { width: 92px; border-radius: 18px; }
+  .trustStrip { grid-template-columns: 1fr; gap: 24px; margin-top: 64px; }
+  .marks { justify-content: space-between; gap: 10px; }
+  .marks span { flex-direction: column; gap: 5px; font-size: .7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectButton { transition: none; }
+}
