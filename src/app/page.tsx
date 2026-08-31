@@ -27,7 +27,7 @@ export default async function Home() {
       <PortfolioHero />
       <AboutSection />
       <ServicesSection />
-      <PortfolioSection projects={projects} />
+      <PortfolioSection projects={projects ?? []} />
       <ContactSection />
     </main>
   );

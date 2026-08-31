@@ -2,11 +2,11 @@
 
 import type { Key } from "react";
 import { Card, Chip, Tabs } from "@heroui/react";
-import { Asterisk, ArrowUpRight, BarChart3, Blocks, Bot, CircleDollarSign, Database, Globe2, Workflow } from "lucide-react";
+import { Asterisk, ArrowUpRight, Blocks, CircleDollarSign, Globe2, Workflow } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 import Image from "next/image";
-import { portfolioProjects, projectCategories, type PortfolioProject, type ProjectCategory } from "@/lib/project-data";
+import { projectCategories, type PortfolioProject, type ProjectCategory } from "@/lib/project-data";
 import styles from "./portfolio-section.module.css";
 
 const easeOut = [0.2, 0, 0, 1] as const;
@@ -24,10 +24,8 @@ function ProjectVisual({ project }: { project: PortfolioProject }) {
         <Image className={styles.projectImage} src={project.imageUrl} alt={project.imageAlt ?? `${project.title} project preview`} fill sizes="(max-width: 980px) 100vw, 50vw" />
       ) : project.visual === "automation" ? (
         <div className={styles.workflowCanvas}>
-          {[Bot, Database, Blocks, BarChart3].map((NodeIcon, index) => (
-            <div className={styles.workflowNode} key={index}><NodeIcon size={19} /><span>{["Trigger", "Enrich", "Qualify", "Route"][index]}</span></div>
-          ))}
-          <i /><i /><i />
+          <div className={styles.workflowNode}><Icon size={19} /><span>{project.title}</span></div>
+          <div className={styles.workflowNode}><Blocks size={19} /><span>{project.outcome}</span></div>
         </div>
       ) : (
         <div className={styles.productCanvas}>
@@ -38,8 +36,7 @@ function ProjectVisual({ project }: { project: PortfolioProject }) {
             <small>{project.outcome}</small>
           </div>
           <div className={styles.previewPanel}>
-            <div className={styles.previewMetric}><small>Overview</small><strong>{project.visual === "crypto" ? "$128.4K" : project.visual === "commerce" ? "2,840" : "98.6%"}</strong></div>
-            <div className={styles.chart}><span /><span /><span /><span /><span /><span /></div>
+            <div className={styles.previewMetric}><small>Overview</small><strong>{project.stack.length} tools</strong></div>
             <div className={styles.previewRows}><i /><i /><i /></div>
           </div>
         </div>
@@ -82,9 +79,10 @@ function ProjectCard({ project, index }: { project: PortfolioProject; index: num
   );
 }
 
-export function PortfolioSection({ projects = portfolioProjects }: { projects?: PortfolioProject[] }) {
+export function PortfolioSection({ projects }: { projects?: PortfolioProject[] }) {
   const [activeCategory, setActiveCategory] = useState<ProjectCategory>("all");
   const reduceMotion = useReducedMotion();
+  if (!projects?.length) return null;
 
   return (
     <section className={styles.shell} id="works" aria-labelledby="works-title">
