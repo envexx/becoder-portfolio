@@ -136,9 +136,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   position: absolute;
   z-index: 3;
   left: 50%;
-  bottom: -14%;
-  width: min(125%, 780px);
-  height: 112%;
+  bottom: -15%;
+  width: min(121%, 745px);
+  height: 114%;
   transform: translateX(-50%);
   filter: drop-shadow(0 30px 38px rgba(56,5,0,.34));
 }
@@ -193,7 +193,7 @@ a:focus-visible { outline: 2px solid #f1ffad; outline-offset: 4px; border-radius
   .hero-copy h1 span { white-space: normal; }
   .hero-description { max-width: 520px; }
   .portrait-stage { position: relative; left: auto; right: auto; top: auto; bottom: auto; width: min(100%, 560px); height: 560px; margin: 25px auto -58px; }
-  .portrait-image-wrap { bottom: -14%; width: min(124%, 690px); height: 116%; }
+  .portrait-image-wrap { bottom: -14%; width: min(119%, 660px); height: 114%; }
   .hero-proof { grid-column: auto; align-self: stretch; max-width: none; margin: 0; }
   .hero-proof > p { max-width: 500px; margin-bottom: 45px; }
   .metric strong { font-size: clamp(6rem, 22vw, 9rem); }
@@ -212,7 +212,7 @@ a:focus-visible { outline: 2px solid #f1ffad; outline-offset: 4px; border-radius
   .hero-actions { display: grid; grid-template-columns: 1fr 1fr; }
   .hero-button { min-width: 0; padding: 0 14px; }
   .portrait-stage { width: calc(100% + 36px); height: 470px; margin-left: -18px; }
-  .portrait-image-wrap { bottom: -12%; width: min(126%, 550px); height: 114%; }
+  .portrait-image-wrap { bottom: -12%; width: min(118%, 535px); height: 112%; }
   .floating-card-left { left: 10%; }
   .floating-card-right { right: 9%; }
   .tech-strip > span:nth-child(2) { display: none; }

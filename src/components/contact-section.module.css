@@ -63,7 +63,7 @@
 .contactDetails small { align-self: end; color: rgba(255,255,255,.66); font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
 .contactDetails strong { align-self: start; font-size: 11px; font-weight: 650; }
 
-.portrait { position: absolute; z-index: 4; left: 31%; bottom: -25%; width: 43%; height: 130%; pointer-events: none; opacity: 1; }
+.portrait { position: absolute; z-index: 4; left: 29%; bottom: -17%; width: 42%; height: 118%; pointer-events: none; opacity: 1; }
 .portrait img { object-fit: contain; object-position: center bottom; filter: contrast(1.04) drop-shadow(0 30px 35px rgba(80,8,0,.22)); }
 
 .formCard {
@@ -158,7 +158,7 @@
 
 @media (max-width: 1060px) {
   .contactPanel { grid-template-columns: minmax(280px, .8fr) minmax(430px, 1fr); }
-  .portrait { left: 22%; bottom: -24%; width: 50%; height: 128%; opacity: .72; }
+  .portrait { left: 23%; bottom: -17%; width: 48%; height: 116%; opacity: .82; }
   .formCard { grid-column: 2; }
 }
 

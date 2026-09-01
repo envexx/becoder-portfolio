@@ -85,7 +85,7 @@ export function PortfolioHero() {
             <div className="portrait-image-wrap">
               <Image
                 className="portrait-image"
-                src="/hero-portrait-full.png"
+                src="/nugrah-portrait-original.png"
                 alt={`Portrait of ${content.name}`}
                 fill
                 priority

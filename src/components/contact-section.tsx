@@ -46,7 +46,7 @@ export function ContactSection() {
         </motion.div>
 
         <div className={styles.portrait} aria-hidden="true">
-          <Image src="/contact-portrait-full.png" alt="" fill sizes="(max-width: 860px) 92vw, 34vw" />
+          <Image src="/nugrah-portrait-original.png" alt="" fill sizes="(max-width: 860px) 92vw, 34vw" />
         </div>
 
         <motion.div
