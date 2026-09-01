@@ -73,6 +73,19 @@ export function PortfolioHero() {
                 Let&apos;s talk
               </Button>
             </motion.div>
+            <motion.ul className="achievement-strip" variants={container} aria-label="Hackathon achievements">
+              {content.achievements.map((achievement) => (
+                <motion.li key={achievement.event} variants={reveal} transition={{ duration: 0.4, ease: easeOut }}>
+                  <a className="achievement-badge" href={achievement.href} target="_blank" rel="noreferrer">
+                    <Image className="achievement-logo" src={achievement.logo} alt="" width={26} height={26} />
+                    <span className="achievement-text">
+                      <strong>{achievement.title}</strong>
+                      <small>{achievement.event}</small>
+                    </span>
+                  </a>
+                </motion.li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           <motion.div

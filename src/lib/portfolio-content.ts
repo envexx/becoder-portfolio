@@ -21,6 +21,26 @@ export const portfolioContent = {
   proof: "Four years turning product ideas into usable software—combining thoughtful interfaces, dependable backends, and practical automation.",
   metric: { label: "Projects completed", value: "15", suffix: "+" },
   technologies: ["TypeScript", "JavaScript", "Python", "PHP"],
+  achievements: [
+    {
+      title: "3rd Best Overall + Tipping Bot Track Winner",
+      event: "WDK × Tether Hackathon",
+      logo: "/badges/badge-tether.png",
+      href: "https://tether.to/wdk",
+    },
+    {
+      title: "1st Place Winner",
+      event: "AuraLens · HeyAura",
+      logo: "/badges/badge-aura.png",
+      href: "https://www.heyaura.com/",
+    },
+    {
+      title: "3rd Place Winner",
+      event: "HyperEval · Hypercerts",
+      logo: "/badges/badge-hypercerts.png",
+      href: "https://hypercerts.org/",
+    },
+  ],
   social: {
     github: "https://github.com/envexx",
     linkedin: "https://www.linkedin.com/in/nugrah-salam-16a408257/",
